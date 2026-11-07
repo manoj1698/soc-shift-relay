@@ -1,0 +1,18 @@
+{
+  "rules": [
+    {
+      "id": "FP-01",
+      "rule": "Port scan detected",
+      "source_ip": "10.0.5.20",
+      "weekdays": [
+        "Sat"
+      ],
+      "window_ist": [
+        "00:00",
+        "04:00"
+      ],
+      "reason": "Approved weekly vulnerability scan by scanner-01",
+      "change_ticket": "CHG-2231"
+    }
+  ]
+}

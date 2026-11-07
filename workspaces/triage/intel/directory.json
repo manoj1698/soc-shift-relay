@@ -1,0 +1,56 @@
+{
+  "users": {
+    "priya.sharma": {
+      "name": "Priya Sharma",
+      "department": "Finance",
+      "title": "Finance Manager",
+      "privileged": false,
+      "manager": "anil.kapoor",
+      "usual_location": "Mumbai, IN"
+    },
+    "rahul.verma": {
+      "name": "Rahul Verma",
+      "department": "Sales",
+      "title": "Account Executive",
+      "privileged": false,
+      "manager": "neha.iyer",
+      "usual_location": "Bengaluru, IN"
+    },
+    "svc-backup": {
+      "name": "Backup service account",
+      "department": "IT",
+      "title": "Service account",
+      "privileged": true,
+      "manager": "it-ops",
+      "usual_location": "datacenter"
+    },
+    "ext.arjun.mehta": {
+      "name": "Arjun Mehta",
+      "department": "Engineering (contractor)",
+      "title": "Contract developer, payments-api",
+      "privileged": false,
+      "manager": "neha.kapoor",
+      "usual_location": "Pune, IN"
+    }
+  },
+  "hosts": {
+    "jump-host-01": {
+      "ip": "10.0.2.15",
+      "owner": "it-ops",
+      "criticality": "high",
+      "exposure": "SSH open to the internet for vendor access"
+    },
+    "fin-laptop-07": {
+      "ip": "10.0.3.47",
+      "owner": "priya.sharma",
+      "criticality": "medium",
+      "exposure": "none"
+    },
+    "scanner-01": {
+      "ip": "10.0.5.20",
+      "owner": "security",
+      "criticality": "high",
+      "exposure": "internal only"
+    }
+  }
+}

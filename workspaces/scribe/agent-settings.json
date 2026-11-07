@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Edit(./shift-log.md)",
+      "Write(./shift-log.md)",
+      "Edit(./on-call-roster.md)",
+      "Write(./on-call-roster.md)",
+      "Write(./reports/**)",
+      "Edit(./reports/**)",
+      "Bash(python tools/audit_trail.py:*)",
+      "Bash(py tools/audit_trail.py:*)",
+      "Bash(cd:*)",
+      "Bash(mkdir:*)"
+    ],
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(del:*)",
+      "Bash(rmdir:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(Invoke-WebRequest:*)",
+      "Bash(git push:*)",
+      "WebFetch",
+      "WebSearch",
+      "Edit(./seed/**)",
+      "Write(./seed/**)",
+      "Edit(./tools/**)",
+      "Write(./tools/**)"
+    ]
+  }
+}

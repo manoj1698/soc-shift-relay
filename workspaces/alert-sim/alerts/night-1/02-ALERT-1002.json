@@ -1,0 +1,10 @@
+{
+  "id": "ALERT-1002",
+  "siem_severity": "high",
+  "time": "2026-11-07T01:47:00+05:30",
+  "rule": "SSH brute force",
+  "source_ip": "203.0.113.45",
+  "target": "jump-host-01",
+  "target_ip": "10.0.2.15",
+  "details": "412 failed SSH logins for users root, admin, ubuntu in 10 minutes; no successful login"
+}

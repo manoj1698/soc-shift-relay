@@ -1,0 +1,29 @@
+{
+  "_note": "Offline excerpt of public advisories (OSV, NVD) for the Python packages the lab apps use, so the demo needs no network. A real deployment runs OSV-Scanner or Trivy against the live databases. People change this file, agents never.",
+  "pypi": {
+    "requests": [
+      {
+        "id": "CVE-2018-18074", "fixed": "2.20.0", "severity": "medium",
+        "summary": "Sends the Authorization header to an http URL after an https-to-http redirect on the same host"
+      },
+      {
+        "id": "CVE-2024-35195", "fixed": "2.32.0", "severity": "medium",
+        "summary": "A Session that once used verify=False keeps skipping certificate checks for that host"
+      },
+      {
+        "id": "CVE-2024-47081", "fixed": "2.32.4", "severity": "medium",
+        "summary": "Can leak .netrc credentials to third parties for crafted URLs"
+      }
+    ],
+    "pyyaml": [
+      {
+        "id": "CVE-2020-1747", "fixed": "5.3.1", "severity": "high",
+        "summary": "Arbitrary code execution when full_load or FullLoader parses untrusted YAML"
+      },
+      {
+        "id": "CVE-2020-14343", "fixed": "5.4", "severity": "high",
+        "summary": "Arbitrary code execution through full_load or FullLoader (incomplete fix of CVE-2020-1747)"
+      }
+    ]
+  }
+}

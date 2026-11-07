@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Bash(python tools/scan.py:*)",
+      "Bash(py tools/scan.py:*)",
+      "Bash(cd:*)",
+      "Bash(mkdir:*)",
+      "Write(./fixes/**)",
+      "Edit(./fixes/**)",
+      "Write(./reports/**)",
+      "Edit(./reports/**)"
+    ],
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(del:*)",
+      "Bash(rmdir:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(Invoke-WebRequest:*)",
+      "Bash(git push:*)",
+      "Bash(sh:*)",
+      "Bash(bash:*)",
+      "Bash(pip:*)",
+      "Bash(python pushes/:*)",
+      "Bash(python repo/:*)",
+      "Bash(python fixes/:*)",
+      "WebFetch",
+      "WebSearch",
+      "Edit(./pushes/**)",
+      "Write(./pushes/**)",
+      "Edit(./repo/**)",
+      "Write(./repo/**)",
+      "Edit(./tools/**)",
+      "Write(./tools/**)",
+      "Edit(./rules/**)",
+      "Write(./rules/**)"
+    ]
+  }
+}

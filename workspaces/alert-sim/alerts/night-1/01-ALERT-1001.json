@@ -1,0 +1,9 @@
+{
+  "id": "ALERT-1001",
+  "siem_severity": "medium",
+  "time": "2026-11-07T01:12:00+05:30",
+  "rule": "Port scan detected",
+  "source_ip": "10.0.5.20",
+  "target": "10.0.0.0/16 (1,204 hosts)",
+  "details": "TCP SYN scan of ports 22, 80, 443, 3389 across 1,204 hosts over 18 minutes"
+}

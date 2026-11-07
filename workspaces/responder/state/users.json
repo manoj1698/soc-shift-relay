@@ -1,0 +1,18 @@
+{
+  "priya.sharma": {
+    "status": "active",
+    "department": "Finance"
+  },
+  "rahul.verma": {
+    "status": "active",
+    "department": "Sales"
+  },
+  "svc-backup": {
+    "status": "active",
+    "department": "IT"
+  },
+  "ext.arjun.mehta": {
+    "status": "active",
+    "department": "Engineering"
+  }
+}

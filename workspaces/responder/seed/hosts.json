@@ -1,0 +1,14 @@
+{
+  "jump-host-01": {
+    "ip": "10.0.2.15",
+    "isolated": false
+  },
+  "fin-laptop-07": {
+    "ip": "10.0.3.47",
+    "isolated": false
+  },
+  "scanner-01": {
+    "ip": "10.0.5.20",
+    "isolated": false
+  }
+}

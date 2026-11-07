@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.tmp
+.env
+alert_feed/.env
+.switch/
+.claude/settings.local.json
+.DS_Store
+Thumbs.db
+*.mp4
+*.mov
+
+# Written by agents during a run; tools/reset_demo.py removes them
+workspaces/scribe/reports/
+workspaces/appsec/fixes/
+workspaces/appsec/reports/

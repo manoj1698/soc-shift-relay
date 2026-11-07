@@ -1,0 +1,1 @@
+# Firewall blocklist (lab). One IP per line. Managed only by actions/block_ip.py and unblock_ip.py

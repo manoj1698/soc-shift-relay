@@ -1,0 +1,13 @@
+{
+  "trips": [
+    {
+      "user": "priya.sharma",
+      "from": "Mumbai (BOM)",
+      "to": "Frankfurt (FRA)",
+      "flight": "XA-401",
+      "departs": "2026-11-06T23:30:00+05:30",
+      "arrives": "2026-11-07T06:45:00+01:00",
+      "note": "Quarterly audit visit, Frankfurt office. Airline offers in-flight Wi-Fi."
+    }
+  ]
+}

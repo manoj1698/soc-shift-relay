@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Bash(python actions/status.py:*)",
+      "Bash(py actions/status.py:*)",
+      "Bash(cd:*)"
+    ],
+    "ask": [
+      "Bash(python actions/block_ip.py:*)",
+      "Bash(python actions/unblock_ip.py:*)",
+      "Bash(python actions/disable_user.py:*)",
+      "Bash(python actions/enable_user.py:*)",
+      "Bash(python actions/isolate_host.py:*)",
+      "Bash(python actions/release_host.py:*)",
+      "Bash(py actions/block_ip.py:*)",
+      "Bash(py actions/unblock_ip.py:*)",
+      "Bash(py actions/disable_user.py:*)",
+      "Bash(py actions/enable_user.py:*)",
+      "Bash(py actions/isolate_host.py:*)",
+      "Bash(py actions/release_host.py:*)"
+    ],
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(del:*)",
+      "Bash(rmdir:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(Invoke-WebRequest:*)",
+      "Bash(git push:*)",
+      "WebFetch",
+      "WebSearch",
+      "Edit(./state/**)",
+      "Write(./state/**)",
+      "Edit(./actions/**)",
+      "Write(./actions/**)",
+      "Edit(./config/**)",
+      "Write(./config/**)",
+      "Edit(./seed/**)",
+      "Write(./seed/**)"
+    ]
+  }
+}

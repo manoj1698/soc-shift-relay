@@ -1,0 +1,103 @@
+{
+  "_note": "Rules for tools/scan.py, modelled on the open-source tool named in 'like'. Python regex syntax. Within a group the first matching rule wins for a line, so specific rules come before generic ones. A rule marked secret has its match redacted in every output. People change this file, agents never.",
+  "rules": [
+    {
+      "id": "SEC-001", "group": "secrets", "like": "Gitleaks", "severity": "high", "secret": true,
+      "title": "Live payment API key (PayGrid) in code",
+      "pattern": "pg_live_[A-Za-z0-9]{16,}",
+      "files": ["*"],
+      "fix": "Read the key from the environment (os.environ) as main does. The key is exposed: a person rotates it at PayGrid (Tier 2)."
+    },
+    {
+      "id": "SEC-002", "group": "secrets", "like": "Gitleaks", "severity": "high", "secret": true,
+      "title": "AWS access key id in code",
+      "pattern": "\\b(AKIA|ASIA)[0-9A-Z]{16}\\b",
+      "files": ["*"],
+      "fix": "Read credentials from the environment or a secrets manager. A person deactivates the key in AWS (Tier 2)."
+    },
+    {
+      "id": "SEC-003", "group": "secrets", "like": "Gitleaks", "severity": "high",
+      "title": "Private key in the repository",
+      "pattern": "-----BEGIN [A-Z ]*PRIVATE KEY-----",
+      "files": ["*"],
+      "fix": "Remove the key from the repository. A person replaces the key pair (Tier 2)."
+    },
+    {
+      "id": "SEC-004", "group": "secrets", "like": "Gitleaks", "severity": "high", "secret": true,
+      "title": "Hard-coded password, token or secret",
+      "pattern": "(?i)\\b(password|passwd|pwd|secret|token|api_key|apikey)\\b\\s*[:=]\\s*[\"'](?P<secret>[^\"'\\s]{8,})[\"']",
+      "files": ["*"],
+      "fix": "Read the value from the environment or a secrets manager. A person rotates it if it was real (Tier 2)."
+    },
+    {
+      "id": "CODE-001", "group": "code", "like": "Semgrep", "severity": "high",
+      "title": "SQL query built from a variable (SQL injection)",
+      "pattern": "\\.execute\\(\\s*(f[\"']|[\"'][^\"']*[\"']\\s*(%|\\+|\\.format\\())",
+      "files": ["*.py"],
+      "fix": "Pass values as query parameters, for example cur.execute(\"... WHERE customer_ref = %s\", (customer_ref,))."
+    },
+    {
+      "id": "CODE-002", "group": "code", "like": "Semgrep", "severity": "high",
+      "title": "Command run through a shell",
+      "pattern": "subprocess\\.[a-z_]+\\(.*shell\\s*=\\s*True|os\\.system\\(",
+      "files": ["*.py"],
+      "fix": "Pass the command as a list without shell=True, and never build it from input."
+    },
+    {
+      "id": "CODE-003", "group": "code", "like": "Semgrep", "severity": "high",
+      "title": "eval or exec on dynamic input",
+      "pattern": "(?<![\\w.])(eval|exec)\\(",
+      "files": ["*.py"],
+      "fix": "Remove eval and exec; parse input explicitly, for example with json.loads."
+    },
+    {
+      "id": "CODE-004", "group": "code", "like": "Semgrep", "severity": "high",
+      "title": "Unsafe YAML load",
+      "pattern": "yaml\\.(full_load|unsafe_load)\\(|yaml\\.load\\((?!.*SafeLoader)",
+      "files": ["*.py"],
+      "fix": "Use yaml.safe_load."
+    },
+    {
+      "id": "CODE-005", "group": "code", "like": "Semgrep", "severity": "high",
+      "title": "Unsafe deserialisation with pickle",
+      "pattern": "pickle\\.loads?\\(",
+      "files": ["*.py"],
+      "fix": "Never unpickle data from outside; use JSON."
+    },
+    {
+      "id": "CODE-006", "group": "code", "like": "Semgrep", "severity": "medium",
+      "title": "TLS certificate check turned off",
+      "pattern": "verify\\s*=\\s*False",
+      "files": ["*.py"],
+      "fix": "Keep certificate checks on (verify=True is the default)."
+    },
+    {
+      "id": "CODE-007", "group": "code", "like": "Semgrep", "severity": "low",
+      "title": "Debug mode turned on",
+      "pattern": "debug\\s*=\\s*True",
+      "files": ["*.py"],
+      "fix": "Turn debug off outside development."
+    },
+    {
+      "id": "MAL-001", "group": "malware", "like": "YARA", "severity": "critical",
+      "title": "Downloads a script and runs it (download and execute)",
+      "pattern": "\\b(curl|wget)\\b[^|\\n]*\\|\\s*(sudo\\s+)?(ba|z)?sh\\b",
+      "files": ["*"],
+      "fix": "Remove the line: ship scripts with the release, never fetch and run code at deploy time. Block the download host (Tier 1)."
+    },
+    {
+      "id": "MAL-002", "group": "malware", "like": "YARA", "severity": "critical",
+      "title": "Runs an encoded payload",
+      "pattern": "(exec|eval)\\(\\s*(base64\\.b64decode|codecs\\.decode|bytes\\.fromhex)\\(",
+      "files": ["*"],
+      "fix": "Remove the payload and treat the push as malicious: on-call decides about the author's account."
+    },
+    {
+      "id": "MAL-003", "group": "malware", "like": "YARA", "severity": "critical",
+      "title": "Crypto-miner pool address",
+      "pattern": "stratum\\+(tcp|ssl)://",
+      "files": ["*"],
+      "fix": "Remove it: a miner in the code means the account or the build is compromised. On-call decides about the author's account."
+    }
+  ]
+}

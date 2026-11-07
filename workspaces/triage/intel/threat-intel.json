@@ -1,0 +1,48 @@
+{
+  "_note": "Fictional threat intel for the demo. Addresses are from documentation ranges (RFC 5737).",
+  "ips": {
+    "203.0.113.45": {
+      "score": 92,
+      "verdict": "malicious",
+      "tags": [
+        "ssh-bruteforce",
+        "botnet"
+      ],
+      "first_seen": "2026-10-28",
+      "country": "unknown",
+      "summary": "Member of an SSH brute-force botnet reported by 37 sources in the last 10 days"
+    },
+    "198.51.100.77": {
+      "score": 40,
+      "verdict": "unknown",
+      "tags": [
+        "hosting-provider",
+        "vpn-exit"
+      ],
+      "first_seen": "2026-06-02",
+      "country": "DE (Frankfurt)",
+      "summary": "Commercial VPN exit node in Frankfurt; used by both travellers and attackers"
+    },
+    "192.0.2.80": {
+      "score": 5,
+      "verdict": "benign",
+      "tags": [
+        "corporate-vpn"
+      ],
+      "first_seen": "2025-01-10",
+      "country": "IN (Mumbai)",
+      "summary": "Company VPN concentrator, Mumbai office"
+    },
+    "198.51.100.23": {
+      "score": 88,
+      "verdict": "malicious",
+      "tags": [
+        "malware-distribution",
+        "cryptominer"
+      ],
+      "first_seen": "2026-10-30",
+      "country": "unknown",
+      "summary": "Serves shell scripts that install a cryptominer; seen in supply-chain attacks on build servers"
+    }
+  }
+}

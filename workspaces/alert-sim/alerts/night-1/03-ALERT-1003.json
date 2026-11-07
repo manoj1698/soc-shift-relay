@@ -1,0 +1,9 @@
+{
+  "id": "ALERT-1003",
+  "siem_severity": "medium",
+  "time": "2026-11-07T02:05:00+05:30",
+  "rule": "Impossible travel",
+  "source_ip": "198.51.100.77",
+  "target": "priya.sharma",
+  "details": "Login to email and VPN from Frankfurt, DE (198.51.100.77) at 01:55 IST; previous login from Mumbai, IN (192.0.2.80) at 22:10 IST on 2026-11-06. Distance 6,300 km in 3 h 45 min. MFA push approved."
+}

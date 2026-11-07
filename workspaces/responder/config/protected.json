@@ -1,0 +1,21 @@
+{
+  "_note": "Targets the action scripts refuse even with approval (runbook Tier 2). People change this file, agents never.",
+  "protected_networks": [
+    "10.0.0.0/8",
+    "172.16.0.0/12",
+    "192.168.0.0/16",
+    "127.0.0.0/8",
+    "0.0.0.0/8",
+    "169.254.0.0/16",
+    "224.0.0.0/4"
+  ],
+  "protected_ips": [
+    "192.0.2.80"
+  ],
+  "protected_hosts": [
+    "scanner-01"
+  ],
+  "protected_account_prefixes": [
+    "svc-"
+  ]
+}

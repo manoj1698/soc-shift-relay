@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Read"
+    ],
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(del:*)",
+      "Bash(rmdir:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(Invoke-WebRequest:*)",
+      "Bash(git push:*)",
+      "WebFetch",
+      "WebSearch",
+      "Edit(./alerts/**)",
+      "Write(./alerts/**)",
+      "Edit(./pushes/**)",
+      "Write(./pushes/**)"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Bash(python tools/lookup.py:*)",
+      "Bash(py tools/lookup.py:*)",
+      "Bash(cd:*)"
+    ],
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(del:*)",
+      "Bash(rmdir:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(Invoke-WebRequest:*)",
+      "Bash(git push:*)",
+      "WebFetch",
+      "WebSearch",
+      "Edit(./intel/**)",
+      "Write(./intel/**)",
+      "Edit(./tools/**)",
+      "Write(./tools/**)"
+    ]
+  }
+}
